@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Voir un monstre :</h2>
+        Monstre {{monstre.id}} :
+        <p>
+            Nom : {{monstre.nom}}<br>
+            Type : {{monstre.type}}<br>
+            Puissance : {{monstre.puissance}}<br>
+            Taille : {{monstre.taille}}<br>
+            Royaume : {% if monstre.royaume == null %} Pas de Royaume {% else %}{{monstre.royaume.nom}}{% endif %}<br>
+            Supprimer le monstre : <a href="{{ path('supprimerMonstre',{ 'id': monstre.id })}}">Supprimer</a> <!--ACTION 5 -->..
+        </p> 
+    </body>
+    <p>
+        Liens vers l'accueil : <a href="{{ path('accueil')}}">Accueil</a>
+    </p>
+</html>
