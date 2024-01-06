@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>listeRoyaume</title>
+    </head>
+    <body>
+        <h1>Liste des Royaumes de Monsterland :</h1>
+        <p>
+           Voici la liste de tous les royaumes de Monsterland :
+        </p>
+        <ul>
+        {% for royaume in royaumes %}
+        <li>Royaume {{royaume.id}} :
+            <p>
+                Nom : {{royaume.nom}}<br>
+            </p> 
+        </li>
+        {% endfor %}
+        </ul>
+        <p>
+            Liens vers l'accueil : <a href="{{ path('accueil')}}">Accueil</a>
+        </p>
+    </body>
+</html>

@@ -29,3 +29,58 @@ supprimerMonstre:
  controller: App\Controller\MonstreController::supprimerMonstre
  requirements:
   id: \d+
+listeRoyaume:
+ path: /listeRoyaume
+ controller: App\Controller\MonstreController::afficherListeRoyaume
+ajouterRoyaume:
+ path: /ajouterRoyaume
+ controller: App\Controller\MonstreController::ajouterRoyaume
+modifierRoyaume:
+ path: /modifierRoyaume/{id}
+ controller: App\Controller\MonstreController::modifierRoyaume
+ requirements:
+  id: \d+
+ defaults :
+  id: 1
+voirRoyaume:
+ path: /voirRoyaume/{id}
+ controller: App\Controller\MonstreController::voirMonstre
+ requirements:
+  id: \d+
+ defaults :
+  id: 1
+supprimerRoyaume:
+ path: /supprimerRoyaume/{id}
+ controller: App\Controller\MonstreController::supprimerRoyaume
+ requirements:
+  id: \d+
+afficherListeMonstreRoyaume:
+ path: /afficherListeMonstreRoyaume/{id}
+ controller: App\Controller\MonstreController::afficherListeMonstreRoyaume
+ requirements:
+  id: \d+
+listerMonstreType:
+ path: /listerMonstreType/{Type}
+ controller: App\Controller\MonstreController::listerMonstreType
+ defaults:
+  Type: "Zombie"
+listeMonstreAll:
+ path: /listeMonstreAll
+ controller: App\Controller\MonstreController::listeMonstreAll
+listerRoyaumeMonstreCompte:
+ path: /listerRoyaumeMonstreCompte
+ controller: App\Controller\MonstreController::listerRoyaumeMonstreCompte
+changerRoyaume:
+ path: /changerRoyaume/{id1}/{id2}
+ controller: App\Controller\MonstreController::changerRoyaume
+rechercherMonstre:
+ path: /rechercherMonstre/{nom}
+ controller: App\Controller\MonstreController::rechercherMonstre
+ defaults :
+  nom: ""
+plusFort:
+ path: /plusFort
+ controller: App\Controller\MonstreController::plusFort
+plusFortRoyaume:
+ path: /plusFortRoyaume
+ controller: App\Controller\MonstreController::plusFortRoyaume

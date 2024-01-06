@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>listeMonstreType</title>
+    </head>
+    <body>
+        <h1>Liste des monstres par Royaumes et Types :</h1>
+        <table border=2>
+        <tbody>
+            <tr>
+                <td>Royaumes</td>
+                {% for type in types %}
+                    <td>{{type[1]}}</td>
+                {% endfor %}
+            </tr>
+            {% for res in result %}
+                <tr>
+                    <td>{{res[0]}}</td>
+                    {% for i in 1..6 %}
+                        <td>{{res[i]}}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+        <p>
+            Liens vers l'accueil : <a href="{{ path('accueil')}}">Accueil</a>
+        </p>
+    </body>
+</html>

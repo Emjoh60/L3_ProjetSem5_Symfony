@@ -45,4 +45,27 @@ class MonstreRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+    // ACTION 13
+    public function listType(){
+        $query = $this->getEntityManager()->createQuery("SELECT distinct(m.type) FROM App\Entity\Monstre m");
+        return $query->getResult();
+    }
+
+    // ACTION 15
+    public function listeAll(){
+        $query = $this->getEntityManager()->createQuery("SELECT m.id,m.nom,m.type,m.puissance,m.taille,r.nom as nomRoyaume FROM App\Entity\Monstre m, App\Entity\Royaume r WHERE m.royaume=r.id");
+        return $query->getResult();
+    }
+
+    // ACTION 16
+    public function rechercherNom($nom){
+        $query = $this->getEntityManager()->createQuery("SELECT m FROM App\Entity\Monstre m WHERE m.nom LIKE '%$nom%'");
+        return $query->getResult();
+    }
+
+    // ACTION 17
+    public function plusFort(){
+        $query = $this->getEntityManager()->createQuery("SELECT m FROM App\Entity\Monstre m WHERE m.puissance>=ALL(SELECT m1.puissance FROM App\Entity\Monstre m1 WHERE m1.royaume=m.royaume)");
+        return $query->getResult();
+    }
 }

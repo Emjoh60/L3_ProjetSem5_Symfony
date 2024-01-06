@@ -17,7 +17,7 @@ class Royaume
     private ?int $id = null;
 
     #[ORM\Column(length: 255,unique: true)]
-    #[Assert\Regex(pattern:"/^[A-Z][A-Za-z]{0-254}$/",message:"Le nom doit contenir une majuscule en premier caractère.")]
+    #[Assert\Regex(pattern:"/^[A-Z][A-Za-z]*$/",message:"Le nom doit contenir une majuscule en premier caractère.")]
     private ?string $nom = null;
 
     #[ORM\OneToMany(mappedBy: 'royaume', targetEntity: Monstre::class)]

@@ -45,4 +45,10 @@ class RoyaumeRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+    // ACTION 13
+    public function countByType($type,$idR){
+        $query = $this->getEntityManager()->createQuery("SELECT COUNT(m.id) as compte FROM App\Entity\Monstre m WHERE m.royaume=$idR AND m.type LIKE '$type'");
+        return $query->getResult();
+    }
 }

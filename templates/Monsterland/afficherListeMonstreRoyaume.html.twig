@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>listeMonstreRoyaume</title>
+    </head>
+    <body>
+        <h1>Liste des monstres de {{royaume.nom}} :</h1>
+        <p>
+           Voici la liste de tous les monstres de {{royaume.nom}} :
+        </p>
+        <ul>
+        {% for monstre in monstres %}
+        <li>Monstre {{monstre.id}} :
+            <p>
+                Nom : {{monstre.nom}}<br>
+                Type : {{monstre.type}}<br>
+                Puissance : {{monstre.puissance}}<br>
+                Taille : {{monstre.taille}}<br>
+            </p> 
+        </li>
+        {% endfor %}
+        </ul>
+        <p>
+            Liens vers l'accueil : <a href="{{ path('accueil')}}">Accueil</a>
+        </p>
+    </body>
+</html>
