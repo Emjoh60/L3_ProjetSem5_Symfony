@@ -1,0 +1,7 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+Monsterland :
+ resource: routes/Monsterland/routes.yaml
+ prefix: /Monsterland
